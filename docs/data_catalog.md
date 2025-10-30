@@ -1,10 +1,10 @@
-**📘 Data Catalogue – Employee Performance Mapping Project**
+**📘 Data Catalog – Employee Performance Mapping Project**
 
 This document provides a detailed description of all datasets used in the Employee Performance Mapping project. It defines each table, its purpose, and column-level details including data type, description, and possible values where applicable.
 
-**🧩 1. emp_record_table
+🧩 1. emp_record_table
 
-Description:**
+Description:
 
 Contains information about all employees in the organization, including their demographics, job roles, experience, salary, ratings, and project associations.
 
@@ -23,10 +23,11 @@ Contains information about all employees in the organization, including their de
 | **EMP_RATING** | INTEGER           | Performance rating of the employee                                |
 | **MANAGER_ID** | VARCHAR           | ID of the manager supervising the employee                        |
 | **PROJ_ID**    | VARCHAR           | Project ID linked to the employee’s current or past project       |
-**
+
+
 🧩 2. proj_table
 
-Description:**
+Description:
 
 Contains details about projects executed by the company, including project domain, duration, and current status.
 
@@ -39,10 +40,11 @@ Contains details about projects executed by the company, including project domai
 | **CLOSURE_DATE** | DATE              | Date when the project was or is expected to be completed          |
 | **DEV_QTR**      | VARCHAR           | Development quarter when the project was scheduled (e.g., Q1, Q2) |
 | **STATUS**       | VARCHAR           | Current project status (e.g., Done, delayed)                      |
-**
+
+
 🧩 3. data_science_team
 
-Description:**
+Description:
 
 Contains employee information specifically related to the Data Science department. Used for validating organizational role standards and analyzing team composition.
 
