@@ -21,13 +21,13 @@ Each table name clearly represents its purpose and data source.
 
 **👁️ Views**
 
-**Named using the format:** vw_<entity>_<purpose>
+**Named using the format:** vw_entity_purpose
 
 Example: vw_employee_performance_summary
 
 **⚙️ Stored Procedures**
 
-**Named using the format:** sp_<action>_<entity>
+**Named using the format:** sp_action_entity
 
 Example: sp_load_emp_record_table
 
