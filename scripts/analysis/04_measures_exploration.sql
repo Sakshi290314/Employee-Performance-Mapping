@@ -13,22 +13,22 @@ SQL Functions Used:
 ===============================================================================
 */
 
--- 🧮 Total Number of Employees
+--Total Number of Employees
 SELECT COUNT(emp_id) AS total_employees
 FROM processed.emp_record_table;
 
--- 👩‍💻 Total Number of Employees in Data Science Team
+--Total Number of Employees in Data Science Team
 SELECT COUNT(emp_id) AS total_ds_employees
 FROM processed.data_science_team;
 
--- 🏢 Total Number of Departments and Roles
+--Total Number of Departments and Roles
 SELECT COUNT(DISTINCT(dept)) AS total_departments
 FROM processed.emp_record_table;
 
 SELECT COUNT(DISTINCT(role)) AS total_roles
 FROM processed.emp_record_table;
 
--- 💰 Salary Statistics – MIN, MAX, AVG, SUM
+--Salary Statistics – MIN, MAX, AVG, SUM
 SELECT 
     MAX(salary) AS max_salary,
     MIN(salary) AS min_salary,
@@ -36,7 +36,7 @@ SELECT
     SUM(salary) AS total_salary
 FROM processed.emp_record_table;
 
--- 💼 Salary and Experience Distribution by Role
+--Salary and Experience Distribution by Role
 SELECT 
     role,
     SUM(salary) AS total_salary,
@@ -44,7 +44,7 @@ SELECT
 FROM processed.emp_record_table
 GROUP BY role;
 
--- 📈 Minimum and Maximum Salary by Each Role
+--Minimum and Maximum Salary by Each Role
 SELECT 
     role,
     MAX(salary) AS max_salary,
@@ -52,35 +52,35 @@ SELECT
 FROM processed.emp_record_table
 GROUP BY role;
 
--- ⏱️ Experience Range (MAX, MIN, AVG)
+--Experience Range (MAX, MIN, AVG)
 SELECT 
     MAX(exp) AS max_experience,
     MIN(exp) AS min_experience,
     AVG(exp) AS avg_experience
 FROM processed.emp_record_table;
 
--- ⭐ Average Performance Rating per Role
+--Average Performance Rating per Role
 SELECT 
     role,
     AVG(emp_rating) AS avg_rating
 FROM processed.emp_record_table
 GROUP BY role;
 
--- 🌍 Total Salary Expense per Continent
+--Total Salary Expense per Continent
 SELECT 
     continent,
     SUM(salary) AS total_salary_expense
 FROM processed.emp_record_table
 GROUP BY continent;
 
--- 🗺️ Total Salary Expense per Country
+--Total Salary Expense per Country
 SELECT 
     country,
     SUM(salary) AS total_salary_expense
 FROM processed.emp_record_table
 GROUP BY country;
 
--- 📊 Summary Report of Key Business Metrics
+--Summary Report of Key Business Metrics
 SELECT 'Total Employees' AS measure_name, COUNT(emp_id) AS measure_value FROM processed.emp_record_table
 UNION ALL
 SELECT 'Total Data Science Employees', COUNT(emp_id) FROM processed.data_science_team
