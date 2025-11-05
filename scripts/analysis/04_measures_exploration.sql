@@ -14,15 +14,15 @@ SQL Functions Used:
 */
 
 --Total Number of Employees
-SELECT COUNT(emp_id) AS total_employees
+SELECT COUNT(employee_id) AS total_employees
 FROM processed.emp_record_table;
 
 --Total Number of Employees in Data Science Team
-SELECT COUNT(emp_id) AS total_ds_employees
+SELECT COUNT(employee_id) AS total_ds_employees
 FROM processed.data_science_team;
 
 --Total Number of Departments and Roles
-SELECT COUNT(DISTINCT(dept)) AS total_departments
+SELECT COUNT(DISTINCT(department)) AS total_departments
 FROM processed.emp_record_table;
 
 SELECT COUNT(DISTINCT(role)) AS total_roles
@@ -40,7 +40,7 @@ FROM processed.emp_record_table;
 SELECT 
     role,
     SUM(salary) AS total_salary,
-    AVG(exp) AS avg_experience
+    AVG(experience) AS avg_experience
 FROM processed.emp_record_table
 GROUP BY role;
 
@@ -54,15 +54,15 @@ GROUP BY role;
 
 --Experience Range (MAX, MIN, AVG)
 SELECT 
-    MAX(exp) AS max_experience,
-    MIN(exp) AS min_experience,
-    AVG(exp) AS avg_experience
+    MAX(experience) AS max_experience,
+    MIN(experience) AS min_experience,
+    AVG(experience) AS avg_experience
 FROM processed.emp_record_table;
 
 --Average Performance Rating per Role
 SELECT 
     role,
-    AVG(emp_rating) AS avg_rating
+    AVG(employee_rating) AS avg_rating
 FROM processed.emp_record_table
 GROUP BY role;
 
@@ -81,11 +81,11 @@ FROM processed.emp_record_table
 GROUP BY country;
 
 --Summary Report of Key Business Metrics
-SELECT 'Total Employees' AS measure_name, COUNT(emp_id) AS measure_value FROM processed.emp_record_table
+SELECT 'Total Employees' AS measure_name, COUNT(employee_id) AS measure_value FROM processed.emp_record_table
 UNION ALL
-SELECT 'Total Data Science Employees', COUNT(emp_id) FROM processed.data_science_team
+SELECT 'Total Data Science Employees', COUNT(employee_id) FROM processed.data_science_team
 UNION ALL
-SELECT 'Distinct Departments', COUNT(DISTINCT(dept)) FROM processed.emp_record_table
+SELECT 'Distinct Departments', COUNT(DISTINCT(department)) FROM processed.emp_record_table
 UNION ALL
 SELECT 'Distinct Roles', COUNT(DISTINCT(role)) FROM processed.emp_record_table
 UNION ALL
@@ -93,7 +93,7 @@ SELECT 'Total Salary Expense', SUM(salary) FROM processed.emp_record_table
 UNION ALL
 SELECT 'Average Salary', AVG(salary) FROM processed.emp_record_table
 UNION ALL
-SELECT 'Average Experience', AVG(exp) FROM processed.emp_record_table
+SELECT 'Average Experience', AVG(experience) FROM processed.emp_record_table
 UNION ALL
-SELECT 'Average Employee Rating', AVG(emp_rating) FROM processed.emp_record_table;
+SELECT 'Average Employee Rating', AVG(employee_rating) FROM processed.emp_record_table;
 
